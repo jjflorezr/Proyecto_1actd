@@ -2,8 +2,14 @@ import pandas as pd
 import numpy as np
 import os
 
-data = pd.read_csv("processed.cleveland.data")
+a=""
+ejecutador= input("Quien esta corriendo?")
+if ejecutador=="Sofia":
+    a="C:\\Users\\asbar\\OneDrive - Universidad de los Andes\\Carrera\\Séptimo semestre 2023-1\\ANALITICA\\Proyecto_1actd\\processed.cleveland.data"
+
+data = pd.read_csv(a)
 print(data.head())
+
 
 data.replace("?", np.nan, inplace=True)
 
