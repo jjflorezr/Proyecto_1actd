@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-data = pd.read_csv("C:/Users/JUAN JOSE F ROMERO/Documents/UNIANDES/2023-01/Analítica Comp/Proyecto_1actd/processed.cleveland.data")
+data = pd.read_csv("processed.cleveland.data")
 print(data.head())
 
 data.replace("?", np.nan, inplace=True)
