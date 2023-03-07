@@ -18,3 +18,5 @@ data["ca"].fillna(ca_mean, inplace=True)
 
 # Guardamos los datos en un nuevo archivo
 data.to_csv("processed.cleveland_repaired.csv", index=False, header=None)
+
+print("y mi regalo?")
