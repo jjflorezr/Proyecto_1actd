@@ -70,9 +70,27 @@ plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
 plt.legend(['Media'], loc='upper right')
 plt.show()
 
-#Histograma del sexo
-plt.hist(sex, bins=1, color='#0000FF',edgecolor='black', alpha=0.7)
-plt.title('Distribución del sexo')
+#Diagrama de barras de sexo
+
+femenino=0
+masculino=0
+
+for i in sex:
+    if i==0:
+        femenino= femenino+1
+    else:
+        masculino= masculino +1
+
+nombres = ['Hombres', 'Mujeres']
+valores = [masculino,femenino]
+
+# Crear el diagrama de barras
+plt.bar(nombres, valores)
+
+# Personalizar el gráficoS
+plt.title('Grafico de barras')
 plt.xlabel('Sexo')
-plt.ylabel('Frecuencia')
+plt.ylabel('Cantidad')
+
+# Mostrar el gráfico
 plt.show()
