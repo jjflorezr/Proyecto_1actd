@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import os
+print("Colaboradores")
+print("1 -> Sofi , 2 -> Juanjo, 3 -> Sebas")
 
 a=""
 ejecutador= input("Quien esta corriendo?")
@@ -70,8 +72,12 @@ plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
 plt.legend(['Media'], loc='upper right')
 plt.show()
 
-#Diagrama de barras de sexo
 
+
+
+#Diagrama de barras de sexo, y el slope
+
+#Sexo
 femenino=0
 masculino=0
 
@@ -84,13 +90,51 @@ for i in sex:
 nombres = ['Hombres', 'Mujeres']
 valores = [masculino,femenino]
 
-# Crear el diagrama de barras
-plt.bar(nombres, valores)
+plt.bar(nombres, valores,edgecolor='black')
 
-# Personalizar el gráficoS
+
 plt.title('Grafico de barras')
 plt.xlabel('Sexo')
 plt.ylabel('Cantidad')
 
-# Mostrar el gráfico
+plt.show()
+
+#slope
+upsloping=0
+flat=0
+downsloping=0
+
+for i in slope:
+    if i==1:
+        upsloping= upsloping+1
+    elif i==2:
+        flat= flat+1
+    else:
+        downsloping= downsloping+1
+
+tipos_slope=['upsloping','flat','downsloping']
+valores_tipos_slope=[upsloping,flat,downsloping]
+
+plt.bar(tipos_slope, valores_tipos_slope, color='#800080',edgecolor='black')
+
+
+plt.title('Grafico de barras')
+plt.xlabel('Tipos de Slope')
+plt.ylabel('Cantidad')
+
+plt.show()
+
+#Grafico de dispersion
+
+indices = list(range(1, len(chol)+1))
+
+# trazar el gráfico de dispersión
+plt.scatter(indices, chol)
+
+# agregar etiquetas y título
+plt.xlabel('Eje x')
+plt.ylabel('Eje y')
+plt.title('Gráfico de dispersión')
+
+# mostrar el gráfico
 plt.show()
