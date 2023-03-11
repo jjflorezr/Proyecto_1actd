@@ -6,6 +6,7 @@ from pgmpy.sampling import BayesianModelSampling
 from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.estimators import MaximumLikelihoodEstimator, BayesianEstimator
+from pgmpy.inference import VariableElimination
 
 df = pd.read_csv('heart_disease_modified.csv')
 
@@ -17,3 +18,8 @@ model.fit(df, estimator=MaximumLikelihoodEstimator)
 
 for i in model.nodes():
     print(model.get_cpds(i))
+
+#PRUEBA INFERENCIA
+infer = VariableElimination(model)
+P1 = infer.query(['num'], evidence={'age': '0-45','sex':1, 'chol':'0-240','fbs':1})
+print(P1)

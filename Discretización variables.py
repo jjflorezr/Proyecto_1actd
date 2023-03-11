@@ -12,7 +12,7 @@ df = pd.read_csv("processed.cleveland_repaired.csv")
 #Añadir columna que indica anomalía, asignar valores = 1 si hay, 0 si no
 
 df["anom_thalach"] = 0
-df.loc[(220 - df["age"]) > df["thalach"], "anom_thalach"] = 1
+df.loc[(220 - df["age"]) < df["thalach"], "anom_thalach"] = 1
 
 # Discretizar la edad en 3 grupos
 df['age'] = pd.cut(df['age'], bins=[0, 45, 55, 100], labels=['0-45', '45-55', '55-100'])
