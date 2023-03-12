@@ -3,7 +3,6 @@ import numpy as np
 import os
 print("Colaboradores")
 print("1 -> Sofi , 2 -> Juanjo, 3 -> Sebas")
-print("pruebaa")
 
 a=""
 numero= input("Numero de quien corre:")
