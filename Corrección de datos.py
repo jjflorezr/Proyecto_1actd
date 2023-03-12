@@ -3,7 +3,7 @@ import numpy as np
 import os
 print("Colaboradores")
 print("1 -> Sofi , 2 -> Juanjo, 3 -> Sebas")
-
+print("yes")
 a=""
 numero= input("Numero de quien corre:")
 if numero=="1":
