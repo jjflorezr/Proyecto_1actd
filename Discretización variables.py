@@ -39,3 +39,4 @@ del df['thal']
 # Verificar los cambios
 print(df.head())
 df.to_csv('heart_disease_modified.csv', index=False)
+
