@@ -73,58 +73,7 @@ plt.legend(['Media'], loc='upper right')
 plt.show()
 
 
-
-
-#Diagrama de barras de sexo, y el slope
-
-#Sexo
-femenino=0
-masculino=0
-
-for i in sex:
-    if i==0:
-        femenino= femenino+1
-    else:
-        masculino= masculino +1
-
-nombres = ['Hombres', 'Mujeres']
-valores = [masculino,femenino]
-
-plt.bar(nombres, valores,edgecolor='black')
-
-
-plt.title('Grafico de barras')
-plt.xlabel('Sexo')
-plt.ylabel('Cantidad')
-
-plt.show()
-
-#slope
-upsloping=0
-flat=0
-downsloping=0
-
-for i in slope:
-    if i==1:
-        upsloping= upsloping+1
-    elif i==2:
-        flat= flat+1
-    else:
-        downsloping= downsloping+1
-
-tipos_slope=['upsloping','flat','downsloping']
-valores_tipos_slope=[upsloping,flat,downsloping]
-
-plt.bar(tipos_slope, valores_tipos_slope, color='#800080',edgecolor='black')
-
-
-plt.title('Grafico de barras')
-plt.xlabel('Tipos de Slope')
-plt.ylabel('Cantidad')
-
-plt.show()
-
-#Grafico de dispersion
+#Grafico de dispersion chol
 
 indices = list(range(1, len(chol)+1))
 
@@ -134,7 +83,7 @@ plt.scatter(indices, chol)
 # agregar etiquetas y título
 plt.xlabel('Eje x')
 plt.ylabel('Eje y')
-plt.title('Gráfico de dispersión')
+plt.title('Gráfico de dispersión del chol')
 
 # mostrar el gráfico
 plt.show()
