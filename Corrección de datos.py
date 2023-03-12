@@ -3,7 +3,7 @@ import numpy as np
 import os
 print("Colaboradores")
 print("1 -> Sofi , 2 -> Juanjo, 3 -> Sebas")
-print("por fin mkis")
+
 a=""
 numero= input("Numero de quien corre:")
 if numero=="1":
@@ -62,7 +62,7 @@ plt.xlabel('Variables')
 plt.ylabel('Valores')
 
 nombres_variables = ['age', 'trestbp', 'chol','thalach']
-plt.xticks([1, 2, 3, 4], nombres_variables)
+plt.xticks([1, 2, 3,4], nombres_variables)
 plt.show()
 
 #Histograma de la edad
@@ -89,26 +89,44 @@ plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
 plt.legend(['Media'], loc='upper right')
 plt.show()
 
-#Grafico de dispersion chol
+#Histograma del colesterol
 
-plt.scatter(edades, chol)
+plt.hist(chol, bins=10, color='#ADD8E6',edgecolor='black', alpha=0.7)
+plt.title('Distribución del colesterol')
+plt.xlabel('presión arterial')
+plt.ylabel('Frecuencia')
 
-# agregar etiquetas y título
-plt.xlabel('Edades')
-plt.ylabel('Colesterol')
-plt.title('Gráfico de dispersión del chol')
-
-# mostrar el gráfico
+media = np.mean(chol)
+plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
+plt.legend(['Media'], loc='upper right')
 plt.show()
 
-#Grafico de dispersion fbs
+
+
+#Grafico de dispersion chol dada la edad
+
+plt.scatter(edades, chol)
+plt.xlabel('Edades')
+plt.ylabel('Colesterol')
+plt.title('Gráfico de dispersión del chol dado la edad')
+plt.show()
+
+#Grafico de dispersion fbs dada la edad
 
 plt.scatter(edades, trestbps, color="green")
-
-# agregar etiquetas y título
 plt.xlabel('Edades')
 plt.ylabel('presión arterial')
 plt.title('Gráfico de dispersión de la presión arterial dado la edad')
+plt.show()
+
+#Grafico de thalac  dada la edad
+
+plt.scatter(edades, thalach, color="red")
+plt.xlabel('Edades')
+plt.ylabel('resting heart rate')
+plt.title('Gráfico de dispersión del resting heart rate dado la edad')
+plt.show()
+
 
 # mostrar el gráfico
 plt.show()
@@ -117,13 +135,29 @@ plt.show()
 
 import seaborn as sns
 
-
 # Crear el gráfico de violín sexo y chol
 sns.violinplot(x="sex", y="chol", hue="sex", data=data, split=True)
 
 # Personalizar el gráfico (opcional)
-plt.title('Gráfico de violín')
-plt.xlabel('Día')
-plt.ylabel('Total de la factura')
+plt.title('Gráfico del colesterol de acuerdo al sexo')
+plt.xlabel('sexo')
+plt.ylabel('chol')
 
 plt.show()
+
+sns.violinplot(data=todos)
+plt.xticks([0, 1, 2,3], nombres_variables)
+plt.title('Distribución de las variables age, trestbp, chol,thalach ')
+plt.show()
+
+
+# Crear el gráfico de violín threst y chol
+sns.violinplot(x="cp", y="trestbps", hue="sex", data=data, split=True)
+
+# Personalizar el gráfico (opcional)
+plt.title('distribución del colesterol de acuerdo al sexo y el dolor de pecho')
+plt.xlabel('sexo')
+plt.ylabel('chol')
+
+plt.show()
+
