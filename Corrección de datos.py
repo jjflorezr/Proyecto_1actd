@@ -51,6 +51,7 @@ ca= data['ca'].tolist()
 thal= data['thal'].tolist()
 num= data['num'].tolist()
 
+
 # Diagramas de caja para edades,trestbps,chol,thalach
 
 todos=[edades,trestbps,chol,thalach]
@@ -76,18 +77,53 @@ plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
 plt.legend(['Media'], loc='upper right')
 plt.show()
 
+#Histograma de la presion arterial
+
+plt.hist(trestbps, bins=10, color='#800080',edgecolor='black', alpha=0.7)
+plt.title('Distribución de la presión arterial')
+plt.xlabel('presión arterial')
+plt.ylabel('Frecuencia')
+
+media = np.mean(trestbps)
+plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
+plt.legend(['Media'], loc='upper right')
+plt.show()
 
 #Grafico de dispersion chol
 
-indices = list(range(1, len(chol)+1))
-
-# trazar el gráfico de dispersión
-plt.scatter(indices, chol)
+plt.scatter(edades, chol)
 
 # agregar etiquetas y título
-plt.xlabel('Eje x')
-plt.ylabel('Eje y')
+plt.xlabel('Edades')
+plt.ylabel('Colesterol')
 plt.title('Gráfico de dispersión del chol')
 
 # mostrar el gráfico
+plt.show()
+
+#Grafico de dispersion fbs
+
+plt.scatter(edades, trestbps, color="green")
+
+# agregar etiquetas y título
+plt.xlabel('Edades')
+plt.ylabel('presión arterial')
+plt.title('Gráfico de dispersión de la presión arterial dado la edad')
+
+# mostrar el gráfico
+plt.show()
+
+
+
+import seaborn as sns
+
+
+# Crear el gráfico de violín sexo y chol
+sns.violinplot(x="sex", y="chol", hue="sex", data=data, split=True)
+
+# Personalizar el gráfico (opcional)
+plt.title('Gráfico de violín')
+plt.xlabel('Día')
+plt.ylabel('Total de la factura')
+
 plt.show()
