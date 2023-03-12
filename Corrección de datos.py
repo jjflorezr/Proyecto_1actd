@@ -5,20 +5,14 @@ print("Colaboradores")
 print("1 -> Sofi , 2 -> Juanjo, 3 -> Sebas")
 
 a=""
-<<<<<<< HEAD
-ejecutador= input("Quien esta corriendo?")
-if ejecutador=="sofia":
-    a="C:\\Users\\asbar\\OneDrive - Universidad de los Andes\\Carrera\\Séptimo semestre 2023-1\\ANALITICA\\Proyecto_1actd\\processed.cleveland.data"
-
-=======
-numero= input("Numero de quien corre")
+numero= input("Numero de quien corre:")
 if numero=="1":
     a="C:\\Users\\asbar\\OneDrive - Universidad de los Andes\\Carrera\\Séptimo semestre 2023-1\\ANALITICA\\Proyecto_1actd\\processed.cleveland_repaired.csv"
 elif numero =="2":
     a= "C:\\Users\\JUAN JOSE F ROMERO\\Documents\\UNIANDES\\2023-01\\Analítica Comp\\Proyecto_1actd\\processed.cleveland_repaired.csv"
 else:
-    a=""
->>>>>>> c190db871d177e183f6ba15df7f0dccfe6a5000a
+    a="C:\\Users\\juanc\\Documents\\ANDES\\2023-1\\Analitica\\Proyecto_1actd\\processed.cleveland_repaired.csv"
+
 data = pd.read_csv(a)
 print(data.head())
 
