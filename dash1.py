@@ -32,14 +32,22 @@ app.layout = html.Div([
         options=options,
         value='Hombre'
     ),
-    html.Div(id='output')
+    html.H3("¿Qué edad tiene?"),
+    html.Div(["Edad: ",
+              dcc.Input(id='my-input', value='valor inicial', type='text')]),
+    html.Br(),
+    html.Div(id='my-output')
 ])
 
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('dropdown', 'value')])
+
 def update_output(value):
+
     return 'Has seleccionado "{}"'.format(value)
+
+
 
 if __name__ == '__main__':
     app.run_server()
