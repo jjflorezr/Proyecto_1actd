@@ -8,7 +8,19 @@ from pgmpy.factors.discrete import TabularCPD
 from pgmpy.estimators import MaximumLikelihoodEstimator, BayesianEstimator
 from pgmpy.inference import VariableElimination
 
-df = pd.read_csv('heart_disease_modified.csv')
+print("Colaboradores")
+print("1 -> Sofi , 2 -> Juanjo, 3 -> Sebas")
+
+a=""
+numero= input("Numero de quien corre:")
+if numero=="1":
+    a="C:\\Users\\asbar\\OneDrive - Universidad de los Andes\\Carrera\\Séptimo semestre 2023-1\\ANALITICA\\Proyecto_1actd\\heart_disease_modified.csv"
+elif numero =="2":
+    a= "C:\\Users\\JUAN JOSE F ROMERO\\Documents\\UNIANDES\\2023-01\\Analítica Comp\\Proyecto_1actd\\heart_disease_modified.csv"
+else:
+    a="C:\\Users\\juanc\\Documents\\ANDES\\2023-1\\Analitica\\Proyecto_1actd\\heart_disease_modified.csv"
+
+df = pd.read_csv(a)
 
 model = BayesianModel([('age','chol'),('age','fbs'),('sex','chol'),('sex','fbs')
                       ,('chol','num'),('fbs','num')
