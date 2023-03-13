@@ -70,7 +70,14 @@ def update_output(dropdow_value,input_value):
 
 
 
+<<<<<<< HEAD
 
+=======
+def update_output(value):
+    print(value)
+    
+    return 'Has seleccionado "{}"'.format(value)
+>>>>>>> 8a39945642ce3ad102352c3145488319a5ea90cd
 
 
 

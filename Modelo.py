@@ -31,11 +31,21 @@ model.fit(df, estimator=MaximumLikelihoodEstimator)
 for i in model.nodes():
     print(model.get_cpds(i))
 
+<<<<<<< HEAD
 #PRUEBA INFERENCIA
 
 edad="0-45"
+=======
+print("PRUEBA")
+#PRUEBA INFERENCIA - Ya separdo el valor, para poder hacer un IF con la recomendacion
+>>>>>>> 8a39945642ce3ad102352c3145488319a5ea90cd
 infer = VariableElimination(model)
 P1 = infer.query(['num'], evidence={'age': edad,'sex':1, 'chol':'0-240','fbs':1})
 print(P1)
+<<<<<<< HEAD
 
 
+=======
+valor= P1.values
+print(valor[0])
+>>>>>>> 8a39945642ce3ad102352c3145488319a5ea90cd
