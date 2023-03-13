@@ -31,7 +31,10 @@ model.fit(df, estimator=MaximumLikelihoodEstimator)
 for i in model.nodes():
     print(model.get_cpds(i))
 
-#PRUEBA INFERENCIA
+print("PRUEBA")
+#PRUEBA INFERENCIA - Ya separdo el valor, para poder hacer un IF con la recomendacion
 infer = VariableElimination(model)
 P1 = infer.query(['num'], evidence={'age': '0-45','sex':1, 'chol':'0-240','fbs':1})
 print(P1)
+valor= P1.values
+print(valor[0])

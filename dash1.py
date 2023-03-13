@@ -44,7 +44,8 @@ app.layout = html.Div([
     [dash.dependencies.Input('dropdown', 'value')])
 
 def update_output(value):
-
+    print(value)
+    
     return 'Has seleccionado "{}"'.format(value)
 
 
