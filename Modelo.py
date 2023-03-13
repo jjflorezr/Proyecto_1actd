@@ -32,6 +32,10 @@ for i in model.nodes():
     print(model.get_cpds(i))
 
 #PRUEBA INFERENCIA
+
+edad="0-45"
 infer = VariableElimination(model)
-P1 = infer.query(['num'], evidence={'age': '0-45','sex':1, 'chol':'0-240','fbs':1})
+P1 = infer.query(['num'], evidence={'age': edad,'sex':1, 'chol':'0-240','fbs':1})
 print(P1)
+
+
