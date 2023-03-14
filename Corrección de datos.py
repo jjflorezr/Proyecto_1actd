@@ -77,12 +77,12 @@ plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
 plt.legend(['Media'], loc='upper right')
 plt.show()
 
-#Histograma de la presion arterial
+#Histograma de la presion arterial en reposo
 
 plt.hist(trestbps, bins=10, color='#800080',edgecolor='black', alpha=0.7)
-plt.title('Distribución de la presión arterial')
-plt.xlabel('presión arterial')
-plt.ylabel('Frecuencia')
+plt.title('Distribución de la presión arterial en reposo')
+plt.xlabel('presión arterialen reposo (mm Hg)')
+plt.ylabel('Frecuencia ')
 
 media = np.mean(trestbps)
 plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
@@ -93,7 +93,7 @@ plt.show()
 
 plt.hist(chol, bins=10, color='#ADD8E6',edgecolor='black', alpha=0.7)
 plt.title('Distribución del colesterol')
-plt.xlabel('presión arterial')
+plt.xlabel('Colesterol mg/dl')
 plt.ylabel('Frecuencia')
 
 media = np.mean(chol)
@@ -101,6 +101,17 @@ plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
 plt.legend(['Media'], loc='upper right')
 plt.show()
 
+#Histograma de la frecuencia cardiaca
+
+plt.hist(thalach, bins=10, color='#90EE90',edgecolor='black', alpha=0.7)
+plt.title('Distribución de la frecuencia cradiaca en reposo')
+plt.xlabel('Frecuencia cardiaca')
+plt.ylabel('Frecuencia')
+
+media = np.mean(thalach)
+plt.axvline(media, color='red', linestyle='dashed', linewidth=1)
+plt.legend(['Media'], loc='upper right')
+plt.show()
 
 
 #Grafico de dispersion chol dada la edad
@@ -108,14 +119,14 @@ plt.show()
 plt.scatter(edades, chol)
 plt.xlabel('Edades')
 plt.ylabel('Colesterol')
-plt.title('Gráfico de dispersión del chol dado la edad')
+plt.title('Gráfico de dispersión del chol(mg/dl) dado la edad')
 plt.show()
 
-#Grafico de dispersion fbs dada la edad
+#Grafico de dispersion presion arterial dada la edad
 
 plt.scatter(edades, trestbps, color="green")
 plt.xlabel('Edades')
-plt.ylabel('presión arterial')
+plt.ylabel('Presión arterial (mm Hg)')
 plt.title('Gráfico de dispersión de la presión arterial dado la edad')
 plt.show()
 
@@ -123,8 +134,8 @@ plt.show()
 
 plt.scatter(edades, thalach, color="red")
 plt.xlabel('Edades')
-plt.ylabel('resting heart rate')
-plt.title('Gráfico de dispersión del resting heart rate dado la edad')
+plt.ylabel('Frecuencia cardiaca')
+plt.title('Gráfico de dispersión de la frecuencia cardiaca dado la edad')
 plt.show()
 
 
@@ -152,12 +163,12 @@ plt.show()
 
 
 # Crear el gráfico de violín threst y chol
-sns.violinplot(x="cp", y="trestbps", hue="sex", data=data, split=True)
+sns.violinplot(x="fbs", y="age", hue="sex", data=data, split=True)
 
 # Personalizar el gráfico (opcional)
-plt.title('distribución del colesterol de acuerdo al sexo y el dolor de pecho')
-plt.xlabel('sexo')
-plt.ylabel('chol')
+plt.title('Distribución de la edad de acuerdo al sexo y fasting blood sugar > 120 mg/dl')
+plt.xlabel('fbs')
+plt.ylabel('edad')
 
 plt.show()
 
