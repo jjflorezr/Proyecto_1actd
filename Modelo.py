@@ -34,10 +34,10 @@ for i in model.nodes():
 #PRUEBA INFERENCIA
 
 edad="0-45"
-sexo=1
+sexo=0
 print("PRUEBA")
 #PRUEBA INFERENCIA - Ya separdo el valor, para poder hacer un IF con la recomendacion
 infer = VariableElimination(model)
-P1 = infer.query(['num'], evidence={'age': edad,'sex':sexo, 'chol':'0-240','fbs':1})
+P1 = infer.query(['num'], evidence={'age': edad,'sex':sexo, 'chol':'240-260','fbs':1})
 PROBA= P1.values
 print(PROBA[0])
